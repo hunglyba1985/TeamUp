@@ -15,6 +15,7 @@
 		5235C8CB1ECE6ABF00FB09F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5235C8CA1ECE6ABF00FB09F2 /* Assets.xcassets */; };
 		5235C8CE1ECE6ABF00FB09F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5235C8CC1ECE6ABF00FB09F2 /* LaunchScreen.storyboard */; };
 		73CAFF7EEC374BD90E5175B9 /* Pods_TeamUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3284F05634FD54912AED04EF /* Pods_TeamUp.framework */; };
+		B2F7196B1ED4224C004CA4FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2F7196A1ED4224C004CA4FB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		5235C8CD1ECE6ABF00FB09F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5235C8CF1ECE6ABF00FB09F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55DBC8A4E0B97B0BB5CF2838 /* Pods-TeamUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.debug.xcconfig"; sourceTree = "<group>"; };
+		B2F7196A1ED4224C004CA4FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E65CCBAD02E7D4D2FC596D5D /* Pods-TeamUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -101,6 +103,7 @@
 		5235C8BB1ECE6ABF00FB09F2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B2F7196A1ED4224C004CA4FB /* GoogleService-Info.plist */,
 				5235C8BC1ECE6ABF00FB09F2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -169,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5235C8CE1ECE6ABF00FB09F2 /* LaunchScreen.storyboard in Resources */,
+				B2F7196B1ED4224C004CA4FB /* GoogleService-Info.plist in Resources */,
 				5235C8CB1ECE6ABF00FB09F2 /* Assets.xcassets in Resources */,
 				5235C8C61ECE6ABF00FB09F2 /* Main.storyboard in Resources */,
 			);
