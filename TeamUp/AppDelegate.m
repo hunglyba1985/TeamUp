@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 @import Firebase;
+@import FBSDKCoreKit;
+
 
 @interface AppDelegate ()
 
@@ -18,11 +20,44 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
     // [START initialize_firebase]
     [FIRApp configure];
     // [END initialize_firebase]
+    
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
     return YES;
 }
+
+// [START new_delegate]
+- (BOOL)application:(nonnull UIApplication *)application
+            openURL:(nonnull NSURL *)url
+            options:(nonnull NSDictionary<NSString *, id> *)options {
+    // [END new_delegate]
+    return [self application:application
+                     openURL:url
+            // [START new_options]
+           sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                  annotation:options[UIApplicationOpenURLOptionsAnnotationKey]];
+}
+// [END new_options]
+
+// [START old_delegate]
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    // [END old_delegate]
+       return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+            // [START old_options]
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation];
+}
+// [END old_options]
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
