@@ -44,42 +44,38 @@ class RegisterViewController: UIViewController {
     
     
     func firebaseLogin(_ credential: FIRAuthCredential) {
-//        showSpinner({
-//            if let user = FIRAuth.auth()?.currentUser {
-//                // [START link_credential]
-//                user.link(with: credential) { (user, error) in
-//                    // [START_EXCLUDE]
-//                    self.hideSpinner({
-//                        if let error = error {
-//                            self.showMessagePrompt(error.localizedDescription)
-//                            return
-//                        }
-//                        self.tableView.reloadData()
-//                    })
-//                    // [END_EXCLUDE]
-//                }
-//                // [END link_credential]
-//            } else {
-//                // [START signin_credential]
-//                FIRAuth.auth()?.signIn(with: credential) { (user, error) in
-//                    // [START_EXCLUDE]
-//                    self.hideSpinner({
-//                        // [END_EXCLUDE]
-//                        if let error = error {
-//                            // [START_EXCLUDE]
-//                            self.showMessagePrompt(error.localizedDescription)
-//                            // [END_EXCLUDE]
-//                            return
-//                        }
-//                        // [END signin_credential]
-//                        // Merge prevUser and currentUser accounts and data
-//                        // ...
-//                    })
-//                }
-//            }
-//        })
+
+        if let user = FIRAuth.auth()?.currentUser {
+            // [START link_credential]
+            user.link(with: credential) { (user, error) in
+                // [START_EXCLUDE]
+             
+                
+                // [END_EXCLUDE]
+            }
+            // [END link_credential]
+        } else {
+            // [START signin_credential]
+            FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+                // [START_EXCLUDE]
+              
+            }
+        }
+
     }
 
+    
+    @IBAction func getUserInfo(_ sender: Any) {
+        
+        let user = FIRAuth.auth()?.currentUser
+
+        print("user email is",user?.email)
+        print("user icon url is",user?.photoURL)
+        print("user id is ",user?.uid)
+
+        
+    }
+    
     
     
     override func didReceiveMemoryWarning() {
