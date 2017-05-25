@@ -21,6 +21,21 @@ class RegisterViewController: UIViewController {
     }
 
     
+    
+    @IBAction func pushToAnotherView(_ sender: Any) {
+        
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let anotherView = storyboard.instantiateViewController(withIdentifier: "TestViewController")
+        
+        self.navigationController?.pushViewController(anotherView, animated: true)
+        
+    }
+    
+    func testRegisterWithPhone()
+    {
+        
+    }
+    
     @IBOutlet weak var registerFacebook: UIButton!
     
     
@@ -30,11 +45,15 @@ class RegisterViewController: UIViewController {
         loginManager.logIn(withReadPermissions: ["email"], from: self, handler: { (result, error) in
             if error != nil {
 //                self.showMessagePrompt(error.localizedDescription)
+                
+                print(error)
+                
+                
             } else if result!.isCancelled {
                 print("FBLogin cancelled")
             } else {
                 // [START headless_facebook_auth]
-                let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 // [END headless_facebook_auth]
                 self.firebaseLogin(credential)
             }
@@ -43,22 +62,32 @@ class RegisterViewController: UIViewController {
     }
     
     
-    func firebaseLogin(_ credential: FIRAuthCredential) {
+    func firebaseLogin(_ credential: AuthCredential) {
 
-        if let user = FIRAuth.auth()?.currentUser {
+        if let user = Auth.auth().currentUser {
             // [START link_credential]
             user.link(with: credential) { (user, error) in
                 // [START_EXCLUDE]
              
-                
+                if error != nil {
+                    print(error)
+                }
                 // [END_EXCLUDE]
             }
             // [END link_credential]
         } else {
             // [START signin_credential]
-            FIRAuth.auth()?.signIn(with: credential) { (user, error) in
+            Auth.auth().signIn(with: credential) { (user, error) in
                 // [START_EXCLUDE]
               
+                if error != nil {
+                    print(error)
+                }
+                else
+                {
+                    print("successful")
+                    
+                }
             }
         }
 
@@ -67,7 +96,7 @@ class RegisterViewController: UIViewController {
     
     @IBAction func getUserInfo(_ sender: Any) {
         
-        let user = FIRAuth.auth()?.currentUser
+        let user = Auth.auth().currentUser
 
         print("user email is",user?.email)
         print("user icon url is",user?.photoURL)

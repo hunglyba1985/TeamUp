@@ -9,8 +9,9 @@
 #import "AppDelegate.h"
 @import Firebase;
 @import FBSDKCoreKit;
+@import FirebaseAuth;
 
-
+#define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 @interface AppDelegate ()
 
 @end
@@ -28,8 +29,13 @@
     [[FBSDKApplicationDelegate sharedInstance] application:application
                              didFinishLaunchingWithOptions:launchOptions];
     
+    [self registerForRemoteNotifications];
+    
+    
     return YES;
 }
+
+
 
 // [START new_delegate]
 - (BOOL)application:(nonnull UIApplication *)application
@@ -58,6 +64,56 @@
 }
 // [END old_options]
 
+
+#pragma mark - Push Notification 
+- (void)registerForRemoteNotifications {
+    if(SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(@"10.0")){
+        UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
+        center.delegate = self;
+        [center requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge) completionHandler:^(BOOL granted, NSError * _Nullable error){
+            if(!error){
+                [[UIApplication sharedApplication] registerForRemoteNotifications];
+            }
+        }];
+    }
+    else {
+        // Code for old versions
+    }
+}
+
+//Called when a notification is delivered to a foreground app.
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions options))completionHandler{
+    NSLog(@"User Info : %@",notification.request.content.userInfo);
+    completionHandler(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge);
+}
+
+//Called to let your app know which action was selected by the user for a given notification.
+-(void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void(^)())completionHandler{
+    NSLog(@"User Info : %@",response.notification.request.content.userInfo);
+    completionHandler();
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    
+    NSLog(@"did register notification ");
+    
+    // Pass device token to auth.
+    [[FIRAuth auth] setAPNSToken:deviceToken type:FIRAuthAPNSTokenTypeProd];
+    // Further handling of the device token if needed by the app.
+}
+
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)notification
+fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    // Pass notification to auth and check if they can handle it.
+    if ([[FIRAuth auth] canHandleNotification:notification]) {
+        completionHandler(UIBackgroundFetchResultNoData);
+        return;
+    }
+    // This notification is not auth related, developer should handle it.
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

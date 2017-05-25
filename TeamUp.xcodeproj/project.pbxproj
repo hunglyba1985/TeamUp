@@ -14,8 +14,10 @@
 		5235C8CB1ECE6ABF00FB09F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5235C8CA1ECE6ABF00FB09F2 /* Assets.xcassets */; };
 		5235C8CE1ECE6ABF00FB09F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5235C8CC1ECE6ABF00FB09F2 /* LaunchScreen.storyboard */; };
 		73CAFF7EEC374BD90E5175B9 /* Pods_TeamUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3284F05634FD54912AED04EF /* Pods_TeamUp.framework */; };
-		B2F7196B1ED4224C004CA4FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2F7196A1ED4224C004CA4FB /* GoogleService-Info.plist */; };
+		B2294FBB1ED69085009EE8FC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2294FBA1ED69085009EE8FC /* Player.swift */; };
 		B2F7196E1ED42700004CA4FB /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F7196D1ED42700004CA4FB /* RegisterViewController.swift */; };
+		B2F719781ED58232004CA4FB /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F719771ED58232004CA4FB /* TestViewController.m */; };
+		B2F7197B1ED58611004CA4FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2F7197A1ED58611004CA4FB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,9 +32,13 @@
 		5235C8CD1ECE6ABF00FB09F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5235C8CF1ECE6ABF00FB09F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55DBC8A4E0B97B0BB5CF2838 /* Pods-TeamUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.debug.xcconfig"; sourceTree = "<group>"; };
-		B2F7196A1ED4224C004CA4FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B2294FBA1ED69085009EE8FC /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Model/Player.swift; sourceTree = "<group>"; };
 		B2F7196C1ED42700004CA4FB /* TeamUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TeamUp-Bridging-Header.h"; sourceTree = "<group>"; };
 		B2F7196D1ED42700004CA4FB /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controller/RegisterViewController.swift; sourceTree = "<group>"; };
+		B2F719751ED56E34004CA4FB /* TeamUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TeamUp.entitlements; sourceTree = "<group>"; };
+		B2F719761ED58232004CA4FB /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = Controller/TestViewController.h; sourceTree = "<group>"; };
+		B2F719771ED58232004CA4FB /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = Controller/TestViewController.m; sourceTree = "<group>"; };
+		B2F7197A1ED58611004CA4FB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E65CCBAD02E7D4D2FC596D5D /* Pods-TeamUp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,9 +92,11 @@
 		5235C8BA1ECE6ABF00FB09F2 /* TeamUp */ = {
 			isa = PBXGroup;
 			children = (
+				B2F719751ED56E34004CA4FB /* TeamUp.entitlements */,
 				5235C8BE1ECE6ABF00FB09F2 /* AppDelegate.h */,
 				5235C8BF1ECE6ABF00FB09F2 /* AppDelegate.m */,
-				B2F7196D1ED42700004CA4FB /* RegisterViewController.swift */,
+				B2294FBC1ED6908C009EE8FC /* Model */,
+				B2F719791ED58237004CA4FB /* Controller */,
 				5235C8C41ECE6ABF00FB09F2 /* Main.storyboard */,
 				5235C8BB1ECE6ABF00FB09F2 /* Supporting Files */,
 				B2F7196C1ED42700004CA4FB /* TeamUp-Bridging-Header.h */,
@@ -102,11 +110,29 @@
 				5235C8CA1ECE6ABF00FB09F2 /* Assets.xcassets */,
 				5235C8CC1ECE6ABF00FB09F2 /* LaunchScreen.storyboard */,
 				5235C8CF1ECE6ABF00FB09F2 /* Info.plist */,
+				B2F7197A1ED58611004CA4FB /* GoogleService-Info.plist */,
 				5235C8C71ECE6ABF00FB09F2 /* TeamUp.xcdatamodeld */,
-				B2F7196A1ED4224C004CA4FB /* GoogleService-Info.plist */,
 				5235C8BC1ECE6ABF00FB09F2 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B2294FBC1ED6908C009EE8FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2294FBA1ED69085009EE8FC /* Player.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B2F719791ED58237004CA4FB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B2F7196D1ED42700004CA4FB /* RegisterViewController.swift */,
+				B2F719761ED58232004CA4FB /* TestViewController.h */,
+				B2F719771ED58232004CA4FB /* TestViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +172,11 @@
 						DevelopmentTeam = 988D2L6XZT;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -173,7 +204,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5235C8CE1ECE6ABF00FB09F2 /* LaunchScreen.storyboard in Resources */,
-				B2F7196B1ED4224C004CA4FB /* GoogleService-Info.plist in Resources */,
+				B2F7197B1ED58611004CA4FB /* GoogleService-Info.plist in Resources */,
 				5235C8CB1ECE6ABF00FB09F2 /* Assets.xcassets in Resources */,
 				5235C8C61ECE6ABF00FB09F2 /* Main.storyboard in Resources */,
 			);
@@ -238,6 +269,8 @@
 				5235C8BD1ECE6ABF00FB09F2 /* main.m in Sources */,
 				5235C8C91ECE6ABF00FB09F2 /* TeamUp.xcdatamodeld in Sources */,
 				B2F7196E1ED42700004CA4FB /* RegisterViewController.swift in Sources */,
+				B2294FBB1ED69085009EE8FC /* Player.swift in Sources */,
+				B2F719781ED58232004CA4FB /* TestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TeamUp/TeamUp.entitlements;
 				DEVELOPMENT_TEAM = 988D2L6XZT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -381,6 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = TeamUp/TeamUp.entitlements;
 				DEVELOPMENT_TEAM = 988D2L6XZT;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
