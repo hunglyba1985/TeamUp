@@ -25,7 +25,8 @@ class RegisterViewController: UIViewController {
     @IBAction func pushToAnotherView(_ sender: Any) {
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-        let anotherView = storyboard.instantiateViewController(withIdentifier: "TestViewController")
+        let anotherView = storyboard.instantiateViewController(withIdentifier: "FormViewSwitf")
+        
         
         self.navigationController?.pushViewController(anotherView, animated: true)
         

@@ -96,7 +96,7 @@
 - (void)application:(UIApplication *)application
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
-    NSLog(@"did register notification ");
+    NSLog(@"did register notification %@",deviceToken);
     
     // Pass device token to auth.
     [[FIRAuth auth] setAPNSToken:deviceToken type:FIRAuthAPNSTokenTypeProd];

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cIH-ly-wZo">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cIH-ly-wZo">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTe-Ag-SYK">
@@ -66,31 +67,71 @@
                         <viewControllerLayoutGuide type="bottom" id="Ykr-L5-tCP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="20B-82-hdv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BA6-11-aBr">
-                                <rect key="frame" x="105" y="90" width="164" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="RegisterWithPhone"/>
-                                <connections>
-                                    <action selector="registerWithPhoneClick:" destination="yHg-VB-zcZ" eventType="touchUpInside" id="2yN-A9-zfT"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1JP-e1-CaM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1266.4000000000001" y="154.27286356821591"/>
+            <point key="canvasLocation" x="1328" y="146"/>
+        </scene>
+        <!--Form View Switf-->
+        <scene sceneID="A5Q-VI-MvV">
+            <objects>
+                <viewController storyboardIdentifier="FormViewSwitf" id="IuH-tT-tFG" customClass="FormViewSwitf" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tjs-2c-Jpg"/>
+                        <viewControllerLayoutGuide type="bottom" id="xYZ-3Q-ldp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ao0-3d-Oto">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p7u-a9-zy9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2128" y="146"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="C8S-YL-3ak">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="0d2-KT-GFd" customClass="MapViewController" customModule="TeamUp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rpH-ui-tmx"/>
+                        <viewControllerLayoutGuide type="bottom" id="i8b-Ie-9JO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4FZ-ey-tVL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Google map here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tiW-t4-WwV">
+                                <rect key="frame" x="51" y="144" width="219" height="76"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tiW-t4-WwV" firstAttribute="top" secondItem="rpH-ui-tmx" secondAttribute="bottom" constant="124" id="2Mt-mC-fzQ"/>
+                            <constraint firstItem="tiW-t4-WwV" firstAttribute="leading" secondItem="4FZ-ey-tVL" secondAttribute="leadingMargin" constant="35" id="PD3-dc-tkE"/>
+                            <constraint firstItem="i8b-Ie-9JO" firstAttribute="top" secondItem="tiW-t4-WwV" secondAttribute="bottom" constant="348" id="kXv-bQ-wO8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tiW-t4-WwV" secondAttribute="trailing" constant="34" id="mMq-d6-Tvn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ukv-0v-5Wd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2889.375" y="147.88732394366198"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="j9h-Cp-emG">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cIH-ly-wZo" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="qsP-uo-N7A">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qsP-uo-N7A">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
