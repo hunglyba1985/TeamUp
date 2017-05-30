@@ -19,6 +19,8 @@
 		B2A7FAF01EDBCFF400F191AE /* FormViewSwitf.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A7FAEF1EDBCFF400F191AE /* FormViewSwitf.swift */; };
 		B2A7FAF21EDC0CB100F191AE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A7FAF11EDC0CB100F191AE /* MapViewController.swift */; };
 		B2A7FAF41EDC1C9900F191AE /* SpareTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A7FAF31EDC1C9900F191AE /* SpareTimeViewController.swift */; };
+		B2A7FB001EDD5A6100F191AE /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A7FAFE1EDD5A6100F191AE /* CustomCell.swift */; };
+		B2A7FB011EDD5A6100F191AE /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A7FAFF1EDD5A6100F191AE /* CustomCell.xib */; };
 		B2F7196E1ED42700004CA4FB /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F7196D1ED42700004CA4FB /* RegisterViewController.swift */; };
 		B2F719781ED58232004CA4FB /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2F719771ED58232004CA4FB /* TestViewController.m */; };
 		B2F7197B1ED58611004CA4FB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2F7197A1ED58611004CA4FB /* GoogleService-Info.plist */; };
@@ -42,6 +44,8 @@
 		B2A7FAEF1EDBCFF400F191AE /* FormViewSwitf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormViewSwitf.swift; path = Controller/FormViewSwitf.swift; sourceTree = "<group>"; };
 		B2A7FAF11EDC0CB100F191AE /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = Controller/MapViewController.swift; sourceTree = "<group>"; };
 		B2A7FAF31EDC1C9900F191AE /* SpareTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpareTimeViewController.swift; path = Controller/SpareTimeViewController.swift; sourceTree = "<group>"; };
+		B2A7FAFE1EDD5A6100F191AE /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
+		B2A7FAFF1EDD5A6100F191AE /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		B2F7196C1ED42700004CA4FB /* TeamUp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TeamUp-Bridging-Header.h"; sourceTree = "<group>"; };
 		B2F7196D1ED42700004CA4FB /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = Controller/RegisterViewController.swift; sourceTree = "<group>"; };
 		B2F719751ED56E34004CA4FB /* TeamUp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TeamUp.entitlements; sourceTree = "<group>"; };
@@ -134,10 +138,20 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		B2A7FB031EDD5A7400F191AE /* Custom Cell Form */ = {
+			isa = PBXGroup;
+			children = (
+				B2A7FAFE1EDD5A6100F191AE /* CustomCell.swift */,
+				B2A7FAFF1EDD5A6100F191AE /* CustomCell.xib */,
+			);
+			name = "Custom Cell Form";
+			sourceTree = "<group>";
+		};
 		B2F719791ED58237004CA4FB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				B2F7196D1ED42700004CA4FB /* RegisterViewController.swift */,
+				B2A7FB031EDD5A7400F191AE /* Custom Cell Form */,
 				B2A7FAEF1EDBCFF400F191AE /* FormViewSwitf.swift */,
 				B2A7FAF31EDC1C9900F191AE /* SpareTimeViewController.swift */,
 				B2A7FAF11EDC0CB100F191AE /* MapViewController.swift */,
@@ -217,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2A7FB011EDD5A6100F191AE /* CustomCell.xib in Resources */,
 				5235C8CE1ECE6ABF00FB09F2 /* LaunchScreen.storyboard in Resources */,
 				B2F7197B1ED58611004CA4FB /* GoogleService-Info.plist in Resources */,
 				5235C8CB1ECE6ABF00FB09F2 /* Assets.xcassets in Resources */,
@@ -281,6 +296,7 @@
 			files = (
 				5235C8C01ECE6ABF00FB09F2 /* AppDelegate.m in Sources */,
 				5235C8BD1ECE6ABF00FB09F2 /* main.m in Sources */,
+				B2A7FB001EDD5A6100F191AE /* CustomCell.swift in Sources */,
 				B2A7FAF01EDBCFF400F191AE /* FormViewSwitf.swift in Sources */,
 				B2A7FAF41EDC1C9900F191AE /* SpareTimeViewController.swift in Sources */,
 				5235C8C91ECE6ABF00FB09F2 /* TeamUp.xcdatamodeld in Sources */,

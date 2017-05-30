@@ -31,7 +31,7 @@ class FormViewSwitf: XLFormViewController {
         static let height = "height"
         static let weight = "weight"
         static let TimeInline = "spare time"
-        
+        static let ProfilePlayer = "profile player"
     }
     
     let playPositions = ["Goalkeeper","Defender center","Left back","Right back","Midfielder center","Left wing","Right wing","Attacker"]
@@ -61,6 +61,10 @@ class FormViewSwitf: XLFormViewController {
 //        section.footerTitle = "This is a long text that will appear on section footer"
         form.addFormSection(section)
         
+        
+        row = XLFormRowDescriptor(tag: Tags.ProfilePlayer, rowType: CustomCellWithNib)
+        section.addFormRow(row)
+
         
         // Name
         row = XLFormRowDescriptor(tag: Tags.Name, rowType: XLFormRowDescriptorTypeText, title: "Name: ")
@@ -144,5 +148,14 @@ class FormViewSwitf: XLFormViewController {
 
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // change cell height of a particular cell
+        if form.formRow(atIndex: indexPath)?.tag == Tags.ProfilePlayer {
+            return 100
+        }
+        
+        return super.tableView(tableView, heightForRowAt: indexPath)
+    }
+
 
 }

@@ -10,6 +10,8 @@
 @import Firebase;
 @import FBSDKCoreKit;
 @import FirebaseAuth;
+#import <XLForm/XLForm.h>
+
 
 #define SYSTEM_VERSION_GRATERTHAN_OR_EQUALTO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
 @interface AppDelegate ()
@@ -31,10 +33,16 @@
     
     [self registerForRemoteNotifications];
     
+    [self addCustomCellForFormViewController];
     
     return YES;
 }
 
+-(void) addCustomCellForFormViewController
+{
+    [[XLFormViewController cellClassesForRowDescriptorTypes] setObject:@"CustomCell" forKey:@"CustomCellWithNib"];
+    
+}
 
 
 // [START new_delegate]

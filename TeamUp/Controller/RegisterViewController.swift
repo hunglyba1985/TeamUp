@@ -12,8 +12,11 @@ import FBSDKLoginKit
 import Firebase
 
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
 
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,11 +29,12 @@ class RegisterViewController: UIViewController {
         
         let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         let anotherView = storyboard.instantiateViewController(withIdentifier: "FormViewSwitf")
-        
-        
         self.navigationController?.pushViewController(anotherView, animated: true)
         
     }
+    
+    
+
     
     func testRegisterWithPhone()
     {
