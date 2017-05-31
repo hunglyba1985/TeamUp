@@ -63,5 +63,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Update user profile</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Update user profile</string>
 </dict>
 </plist>

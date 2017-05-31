@@ -151,7 +151,7 @@ class FormViewSwitf: XLFormViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         // change cell height of a particular cell
         if form.formRow(atIndex: indexPath)?.tag == Tags.ProfilePlayer {
-            return 100
+            return 150
         }
         
         return super.tableView(tableView, heightForRowAt: indexPath)
