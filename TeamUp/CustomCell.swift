@@ -12,7 +12,7 @@ import Firebase
 
 let CustomCellWithNib = "CustomCellWithNib"
 
-class CustomCell: XLFormBaseCell,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class CustomCell: XLFormBaseCell,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate {
 
     @IBOutlet weak var playerImage: UIImageView!
     var storageRef: StorageReference!
@@ -49,17 +49,53 @@ class CustomCell: XLFormBaseCell,UIImagePickerControllerDelegate,UINavigationCon
 //            self.formViewController().present(imagePicker, animated: true, completion: nil)
 //        }
         
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            picker.sourceType = .camera
+       
+        if UIImagePickerController.isSourceTypeAvailable(.camera) && UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            self.createActionSheetBothCameraAndLibrary()
         } else {
+            let picker = UIImagePickerController()
+            picker.delegate = self
             picker.sourceType = .photoLibrary
+            self.formViewController().present(picker, animated: true, completion:nil)
         }
         
-        self.formViewController().present(picker, animated: true, completion:nil)
 
         
+    }
+    
+    func createActionSheetBothCameraAndLibrary ()
+    {
+        let actionSheet = UIActionSheet(title: "Choose option", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: nil, otherButtonTitles: "Library", "Camera")
+        actionSheet.show(in: self.formViewController().view)
+        
+    }
+    
+    
+    
+    
+    // Mark ActionSheet Delegate
+    func actionSheet(_ actionSheet: UIActionSheet, clickedButtonAt buttonIndex: Int) {
+        
+        let picker = UIImagePickerController()
+        picker.delegate = self
+
+        switch buttonIndex {
+        case 1:
+            print("click option library")
+            picker.sourceType = .photoLibrary
+            self.formViewController().present(picker, animated: true, completion:nil)
+
+        case 2:
+            print("click option camera")
+            picker.sourceType = .camera
+            self.formViewController().present(picker, animated: true, completion:nil)
+
+        default:
+            print("default")
+            
+        }
+        
+
     }
     
     //PickerView Delegate Method
