@@ -35,6 +35,12 @@
     
     [self addCustomCellForFormViewController];
     
+    NSArray *searchPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentPath = [searchPaths objectAtIndex:0];
+    
+    NSLog(@"document path is %@",documentPath);
+    
+    
     return YES;
 }
 

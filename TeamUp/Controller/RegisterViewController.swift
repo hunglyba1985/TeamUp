@@ -10,6 +10,7 @@ import UIKit
 import FBSDKLoginKit
 import FBSDKLoginKit
 import Firebase
+import SDWebImage
 
 
 class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
@@ -21,6 +22,8 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.imageView.sd_setImage(with: NSURL.init(string: "https://firebasestorage.googleapis.com/v0/b/teamup-8fe54.appspot.com/o/AaFFbuAkKLYaHydUz5wfyH9X0tK2%2F517995028054.jpg?alt=media&token=72fb140a-c4e2-4b14-a5ce-c1a5ee8665d1")! as URL)
     }
 
     

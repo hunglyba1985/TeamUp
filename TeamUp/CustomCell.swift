@@ -110,7 +110,18 @@ class CustomCell: XLFormBaseCell,UIImagePickerControllerDelegate,UINavigationCon
         
         let resizeImage = image.resized(withPercentage: 0.2)!
         playerImage.image = resizeImage
-        guard let imageData = UIImageJPEGRepresentation(resizeImage, 0.8) else { return }
+        
+        rowDescriptor!.value = resizeImage
+
+//        self.postImageToFirebase(image: resizeImage)
+        
+     
+        
+    }
+    
+    func postImageToFirebase(image: UIImage)
+    {
+        guard let imageData = UIImageJPEGRepresentation(image, 0.8) else { return }
         let imagePath = Auth.auth().currentUser!.uid +
         "/\(Int(Date.timeIntervalSinceReferenceDate * 1000)).jpg"
         let metadata = StorageMetadata()
@@ -120,12 +131,25 @@ class CustomCell: XLFormBaseCell,UIImagePickerControllerDelegate,UINavigationCon
                 print("Error uploading :\(error)")
                 return
             }
-//            self.uploadSuccess(metadata!, storagePath: imagePath)
+                        self.uploadSuccess(metadata!, storagePath: imagePath)
             
         }
 
+    }
+    
+    func uploadSuccess(_ metadata: StorageMetadata, storagePath: String) {
+        print("Upload Succeeded!")
+        //        self.urlTextView.text = metadata.downloadURL()?.absoluteString
+        print("download image url is \(String(describing: metadata.downloadURLs))")
+        
+        UserDefaults.standard.set(storagePath, forKey: "storagePath")
+        UserDefaults.standard.synchronize()
+        //        self.downloadPicButton.isEnabled = true
+        
+        print("storage path is ",storagePath)
         
     }
+
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         print("picker cancel.")
