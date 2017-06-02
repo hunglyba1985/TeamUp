@@ -46,11 +46,24 @@
                                     <action selector="pushToAnotherView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iQa-Yo-qla"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ctZ-4S-IP2">
+                                <rect key="frame" x="40" y="320" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.16862745100000001" green="0.73725490199999999" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="FlT-v6-zxp"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ctZ-4S-IP2" secondAttribute="bottom" constant="120" id="Jgq-dW-k6b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ctZ-4S-IP2" secondAttribute="trailing" constant="24" id="jbN-gR-oEN"/>
+                            <constraint firstItem="ctZ-4S-IP2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="24" id="yCi-4R-K5S"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="csh-Jy-oD2"/>
                     <connections>
+                        <outlet property="imageView" destination="ctZ-4S-IP2" id="THJ-Rz-oSX"/>
                         <outlet property="registerFacebook" destination="cTe-Ag-SYK" id="6Hj-BI-Pkz"/>
                     </connections>
                 </viewController>
