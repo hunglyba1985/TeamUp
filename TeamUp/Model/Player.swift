@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
+
 class Player: NSObject {
     var uid: String
     var name: String
@@ -53,48 +54,60 @@ class Player: NSObject {
     }
     
     init?(snapshot: DataSnapshot) {
-        guard let dict = snapshot.value as? [String: String] else { return nil }
-        guard let uid  = dict["uid"]  else { return nil }
-        guard let name = dict["name"] else { return nil }
-        guard let age = dict["age"] else { return nil }
-        guard let image = dict["image"] else { return nil }
-        guard let phoneNumber = dict["phoneNumber"] else { return nil }
         
-        guard let work = dict["work"] else { return nil }
-        guard let location = dict["location"] else { return nil }
-        guard let positionPlay = dict["positionPlay"] else { return nil }
-        guard let favoriteClub = dict["favoriteClub"] else { return nil }
         
-        guard let spareTime = dict["spareTime"] else { return nil }
-        guard let matchJoin = dict["matchJoin"] else { return nil }
-        guard let hobby = dict["hobby"] else { return nil }
+        
+        guard let dict = snapshot.value as?  [String: AnyObject] else { return nil }
+        
+        print("convert data to object ",dict)
+        print("player name is", dict["name"] as! String)
 
-        guard let height = dict["height"] else { return nil }
-        guard let weight = dict["weight"] else { return nil }
-        guard let comment = dict["comment"] else { return nil }
+
+        guard let uid  = dict[PlayerUid]  else { return nil }
+        guard let name = dict[PlayerName] else { return nil }
+        guard let age = dict[PlayerAge] else { return nil }
+        guard let image = dict[PlayerAvatarUrl] else { return nil }
+        guard let phoneNumber = dict[PlayerPhoneNumber] else { return nil }
         
-        guard let teamJoined = dict["teamJoined"] else { return nil }
-        guard let joinStatus = dict["joinStatus"] else { return nil }
+        guard let work = dict[PlayerWork] else { return nil }
+        guard let location = dict[PlayerLocation] else { return nil }
+        guard let positionPlay = dict[PlayerPlayPosition] else { return nil }
+        guard let favoriteClub = dict[PlayerFavoriteClub] else { return nil }
+        
+        guard let spareTime = dict[PlayerSpareTime] else { return nil }
+        guard let matchJoin = dict[PlayerMatchJoin] else { return nil }
+        guard let hobby = dict[PlayerHobby] else { return nil }
+
+        guard let height = dict[PlayerHeight] else { return nil }
+        guard let weight = dict[PlayerWeight] else { return nil }
+        guard let comment = dict[PlayerComment] else { return nil }
+        
+        guard let teamJoined = dict[PlayerTeamJoined] else { return nil }
+        guard let joinStatus = dict[PlayerJoinStatus] else { return nil }
 
         
-        self.uid = uid
-        self.name = name
-        self.age = age
-        self.phoneNumber = phoneNumber
-        self.image = image
+        self.uid = uid as! String
         
-        self.work = work
-        self.location = location
-        self.positionPlay = positionPlay
-        self.favoriteClub = favoriteClub
-        self.spareTime = spareTime
+        self.name = name as! String
+        
+        
+        
+        self.age = age as! String
+        self.phoneNumber = phoneNumber as! String
+        self.image = image as! String
+        
+        self.work = work as! String
+        self.location = location as! String
+        self.positionPlay = positionPlay as! String
+        self.favoriteClub = favoriteClub as! String
+        self.spareTime = spareTime as! String
         self.matchJoin = matchJoin as AnyObject
-        self.hobby = hobby
-        self.height = height
-        self.weight = weight
-        self.comment = comment
+        self.hobby = hobby as! String
+        self.height = height as! String
+        self.weight = weight as! String
+        self.comment = comment as! String
         self.teamJoined = teamJoined as AnyObject
-        self.joinStatus = joinStatus
+        self.joinStatus = joinStatus as! String
 
     }
     

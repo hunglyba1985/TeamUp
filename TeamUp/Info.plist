@@ -65,5 +65,10 @@
 	<string>Update user profile</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Update user profile</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

@@ -9,6 +9,8 @@
 import UIKit
 import XLForm
 import Firebase
+import SDWebImage
+
 
 let CustomCellWithNib = "CustomCellWithNib"
 
@@ -27,12 +29,27 @@ class CustomCell: XLFormBaseCell,UIImagePickerControllerDelegate,UINavigationCon
     
     override func update() {
         super.update()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTap(tapGesture:)))
-                playerImage.addGestureRecognizer(tapGesture)
-//                self.playerImage.image = UIImage.init(named: "new image")
         
+      
+        if rowDescriptor.value != nil {
+            playerImage.image = rowDescriptor!.value! as? UIImage
+        }
+        else
+        {
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTap(tapGesture:)))
+            playerImage.addGestureRecognizer(tapGesture)
 
+        }
+        
+        
+    
     }
+    
+    
+    func setImageGetFromFirebase() {
+        
+    }
+    
     
     func imageTap(tapGesture: UITapGestureRecognizer)
     {

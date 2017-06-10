@@ -37,6 +37,13 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     }
     
     
+    @IBAction func showPlayerInfo(_ sender: Any) {
+        
+        let playerInfo = PlayerProfileViewController()
+        self.navigationController?.pushViewController(playerInfo, animated: true)
+        
+        
+    }
 
     
     func testRegisterWithPhone()

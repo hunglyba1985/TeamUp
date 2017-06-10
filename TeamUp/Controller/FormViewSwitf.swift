@@ -183,11 +183,7 @@ class FormViewSwitf: XLFormViewController {
         self.deselectFormRow(sender)
 
         let formValue = form.formValues() as NSDictionary
-        
-        
-        
         let image = formValue[Tags.ProfilePlayer] as! UIImage
-        
         
         self.postImageToFirebase(image: image)
         
@@ -247,24 +243,24 @@ class FormViewSwitf: XLFormViewController {
         let timeString = formatter.string(from: time as Date)
         
         
-        let key = ref.child("Player").childByAutoId().key
-        let post = ["uid": userID,
-                    "name": formValue[Tags.Name] as! String,
-                    "age":formValue[Tags.Age] as! NSDecimalNumber,
-                    "height":formValue[Tags.Height] as! NSDecimalNumber,
-                    "weight":formValue[Tags.Weight] as! NSDecimalNumber,
-                    "phoneNumber":formValue[Tags.PhoneNumber] as! NSDecimalNumber,
-                    "location":formValue[Tags.Location],
-                    "work":formValue[Tags.Work],
-                    "playPosition":formValue[Tags.PlayPosition],
-                    "favoriteClub":formValue[Tags.FavoriteClub],
-                    "spareTime":timeString,
-                    "joinStatus":formValue[Tags.JoinStatus],
-                    "hobby":formValue[Tags.Hobby],
-                    "avataUlr":avatarUlr
+//        let key = ref.child("Player").childByAutoId().key
+        let post = [PlayerUid: userID,
+                    PlayerName: formValue[Tags.Name],
+                    PlayerAge:formValue[Tags.Age] ,
+                    PlayerHeight:formValue[Tags.Height] ,
+                    PlayerWeight:formValue[Tags.Weight] ,
+                    PlayerPhoneNumber:formValue[Tags.PhoneNumber],
+                    PlayerLocation:formValue[Tags.Location],
+                    PlayerWork:formValue[Tags.Work],
+                    PlayerPlayPosition:formValue[Tags.PlayPosition],
+                    PlayerFavoriteClub:formValue[Tags.FavoriteClub],
+                    PlayerSpareTime:timeString,
+                    PlayerJoinStatus:formValue[Tags.JoinStatus],
+                    PlayerHobby:formValue[Tags.Hobby],
+                    PlayerAvatarUrl:avatarUlr
                     ]
         
-        let childUpdate = ["/Player/\(key)":post]
+        let childUpdate = ["/Player/\(userID)":post]
         
         ref.updateChildValues(childUpdate)
         
