@@ -15,6 +15,7 @@
 		5235C8CE1ECE6ABF00FB09F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5235C8CC1ECE6ABF00FB09F2 /* LaunchScreen.storyboard */; };
 		73CAFF7EEC374BD90E5175B9 /* Pods_TeamUp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3284F05634FD54912AED04EF /* Pods_TeamUp.framework */; };
 		B2294FBB1ED69085009EE8FC /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2294FBA1ED69085009EE8FC /* Player.swift */; };
+		B28EDCA61EEE803700E3F271 /* CreateTeamForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28EDCA51EEE803700E3F271 /* CreateTeamForm.swift */; };
 		B2A7FAEE1EDBCE3900F191AE /* FormViewControllerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A7FAED1EDBCE3900F191AE /* FormViewControllerTest.m */; };
 		B2A7FAF01EDBCFF400F191AE /* FormViewSwitf.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A7FAEF1EDBCFF400F191AE /* FormViewSwitf.swift */; };
 		B2A7FAF21EDC0CB100F191AE /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A7FAF11EDC0CB100F191AE /* MapViewController.swift */; };
@@ -39,6 +40,7 @@
 		5235C8CF1ECE6ABF00FB09F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55DBC8A4E0B97B0BB5CF2838 /* Pods-TeamUp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamUp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TeamUp/Pods-TeamUp.debug.xcconfig"; sourceTree = "<group>"; };
 		B2294FBA1ED69085009EE8FC /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Player.swift; path = Model/Player.swift; sourceTree = "<group>"; };
+		B28EDCA51EEE803700E3F271 /* CreateTeamForm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateTeamForm.swift; path = Controller/CreateTeamForm.swift; sourceTree = "<group>"; };
 		B2A7FAEC1EDBCE3900F191AE /* FormViewControllerTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FormViewControllerTest.h; sourceTree = "<group>"; };
 		B2A7FAED1EDBCE3900F191AE /* FormViewControllerTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FormViewControllerTest.m; sourceTree = "<group>"; };
 		B2A7FAEF1EDBCFF400F191AE /* FormViewSwitf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FormViewSwitf.swift; path = Controller/FormViewSwitf.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				B2A7FB031EDD5A7400F191AE /* Custom Cell Form */,
 				B2A7FAEF1EDBCFF400F191AE /* FormViewSwitf.swift */,
 				B2A7FAF31EDC1C9900F191AE /* SpareTimeViewController.swift */,
+				B28EDCA51EEE803700E3F271 /* CreateTeamForm.swift */,
 				B2A7FAF11EDC0CB100F191AE /* MapViewController.swift */,
 				B2F719761ED58232004CA4FB /* TestViewController.h */,
 				B2F719771ED58232004CA4FB /* TestViewController.m */,
@@ -300,6 +303,7 @@
 				B2A7FAF01EDBCFF400F191AE /* FormViewSwitf.swift in Sources */,
 				B2A7FAF41EDC1C9900F191AE /* SpareTimeViewController.swift in Sources */,
 				5235C8C91ECE6ABF00FB09F2 /* TeamUp.xcdatamodeld in Sources */,
+				B28EDCA61EEE803700E3F271 /* CreateTeamForm.swift in Sources */,
 				B2A7FAF21EDC0CB100F191AE /* MapViewController.swift in Sources */,
 				B2A7FAEE1EDBCE3900F191AE /* FormViewControllerTest.m in Sources */,
 				B2F7196E1ED42700004CA4FB /* RegisterViewController.swift in Sources */,

@@ -37,6 +37,12 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
     }
     
     
+    @IBAction func createTeamFormClick(_ sender: Any) {
+        
+        let teamForm = CreateTeamForm()
+        self.navigationController?.pushViewController(teamForm, animated: true)
+        
+    }
 
     
     func testRegisterWithPhone()

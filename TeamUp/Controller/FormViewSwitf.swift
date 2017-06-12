@@ -62,7 +62,8 @@ class FormViewSwitf: XLFormViewController {
         form.addFormSection(section)
         
         
-        row = XLFormRowDescriptor(tag: Tags.ProfilePlayer, rowType: CustomCellWithNib)
+        // Player image
+        row = XLFormRowDescriptor(tag: Tags.ProfilePlayer, rowType: CustomCellWithNib, title: "Player image")
         section.addFormRow(row)
 
         
