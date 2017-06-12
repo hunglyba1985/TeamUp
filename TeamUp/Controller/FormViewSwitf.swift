@@ -55,9 +55,9 @@ class FormViewSwitf: XLFormViewController {
         var row : XLFormRowDescriptor
         
         form = XLFormDescriptor(title: "Player name")
-        form.assignFirstResponderOnShow = true
+        form.assignFirstResponderOnShow = false
         
-        section = XLFormSectionDescriptor.formSection(withTitle: "Register")
+        section = XLFormSectionDescriptor.formSection(withTitle: "")
 //        section.footerTitle = "This is a long text that will appear on section footer"
         form.addFormSection(section)
         
@@ -117,14 +117,7 @@ class FormViewSwitf: XLFormViewController {
         // Switch
         section.addFormRow(XLFormRowDescriptor(tag: Tags.JoinStatus, rowType: XLFormRowDescriptorTypeBooleanSwitch, title: "Join status"))
         
-        
-        section = XLFormSectionDescriptor.formSection()
-        form.addFormSection(section)
-        
-        
-        section = XLFormSectionDescriptor.formSection(withTitle: "Hobby")
-        form.addFormSection(section)
-        
+        // Hobby
         row = XLFormRowDescriptor(tag: Tags.Hobby, rowType: XLFormRowDescriptorTypeTextView, title: "Hobby")
         section.addFormRow(row)
         
@@ -163,6 +156,14 @@ class FormViewSwitf: XLFormViewController {
         return super.tableView(tableView, heightForRowAt: indexPath)
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 1
+        }
+        
+        return 30
+    }
+    
     
     override func formRowDescriptorValueHasChanged(_ formRow: XLFormRowDescriptor!, oldValue: Any!, newValue: Any!) {
         super.formRowDescriptorValueHasChanged(formRow, oldValue: oldValue, newValue: newValue)
@@ -184,12 +185,21 @@ class FormViewSwitf: XLFormViewController {
 
         let formValue = form.formValues() as NSDictionary
         
+        let userID = Auth.auth().currentUser?.uid
+        
+        let image = formValue[Tags.ProfilePlayer]
+        
+        if  image is NSNull
+        {
+            self.createNewPlayerData(withUserID: userID!, userName: "", avatarUlr:"")
+        }
+        else
+        {
+            self.postImageToFirebase(image: image as! UIImage)
+        }
         
         
-        let image = formValue[Tags.ProfilePlayer] as! UIImage
         
-        
-        self.postImageToFirebase(image: image)
         
 
     }
@@ -247,13 +257,13 @@ class FormViewSwitf: XLFormViewController {
         let timeString = formatter.string(from: time as Date)
         
         
-        let key = ref.child("Player").childByAutoId().key
-        let post = ["uid": userID,
-                    "name": formValue[Tags.Name] as! String,
-                    "age":formValue[Tags.Age] as! NSDecimalNumber,
-                    "height":formValue[Tags.Height] as! NSDecimalNumber,
-                    "weight":formValue[Tags.Weight] as! NSDecimalNumber,
-                    "phoneNumber":formValue[Tags.PhoneNumber] as! NSDecimalNumber,
+        let key = userID
+        let post = [
+                    "name": formValue[Tags.Name] ,
+                    "age":formValue[Tags.Age] ,
+                    "height":formValue[Tags.Height] ,
+                    "weight":formValue[Tags.Weight] ,
+                    "phoneNumber":formValue[Tags.PhoneNumber],
                     "location":formValue[Tags.Location],
                     "work":formValue[Tags.Work],
                     "playPosition":formValue[Tags.PlayPosition],
