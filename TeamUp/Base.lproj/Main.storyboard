@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTe-Ag-SYK">
-                                <rect key="frame" x="16" y="72" width="209" height="30"/>
+                                <rect key="frame" x="13" y="72" width="209" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Facebook"/>
                                 <connections>
@@ -61,6 +61,14 @@
                                     <action selector="pushToAnotherView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iQa-Yo-qla"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnR-9w-CrL">
+                                <rect key="frame" x="16" y="244" width="225" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create team "/>
+                                <connections>
+                                    <action selector="createTeam:" destination="BYZ-38-t0r" eventType="touchUpInside" id="10T-xR-pD2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -71,6 +79,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="csh-Jy-oD2"/>
                     <connections>
+                        <outlet property="createTeamAction" destination="XnR-9w-CrL" id="CKN-t4-M3N"/>
                         <outlet property="imageView" destination="ctZ-4S-IP2" id="THJ-Rz-oSX"/>
                         <outlet property="registerFacebook" destination="cTe-Ag-SYK" id="6Hj-BI-Pkz"/>
                     </connections>

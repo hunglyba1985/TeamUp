@@ -187,7 +187,21 @@ class FormViewSwitf: XLFormViewController {
         let formValue = form.formValues() as NSDictionary
         let image = formValue[Tags.ProfilePlayer] as! UIImage
         
-        self.postImageToFirebase(image: image)
+        let userID = Auth.auth().currentUser?.uid
+        
+//        let image = formValue[Tags.ProfilePlayer]
+//        
+//        if  image is NSNull
+//        {
+//            self.createNewPlayerData(withUserID: userID!, userName: "", avatarUlr:"")
+//        }
+//        else
+//        {
+//            self.postImageToFirebase(image: image as! UIImage)
+//        }
+        
+        
+        
         
 
     }

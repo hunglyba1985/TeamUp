@@ -44,6 +44,17 @@ class RegisterViewController: UIViewController,UIImagePickerControllerDelegate,U
         
         
     }
+    
+    @IBOutlet weak var createTeamAction: UIButton!
+    
+    @IBAction func createTeam(_ sender: Any) {
+        
+        let teamForm = CreateTeamForm()
+        self.navigationController?.pushViewController(teamForm, animated: true)
+    }
+    
+   
+
 
     
     func testRegisterWithPhone()

@@ -44,6 +44,9 @@ class CustomCell: XLFormBaseCell,UIImagePickerControllerDelegate,UINavigationCon
 
         }
         
+        if rowDescriptor.title != nil {
+            nameImageLabel.text = rowDescriptor.title
+        }
         
     
     }
