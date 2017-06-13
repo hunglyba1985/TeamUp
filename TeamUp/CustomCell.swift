@@ -17,12 +17,15 @@ let CustomCellWithNib = "CustomCellWithNib"
 class CustomCell: XLFormBaseCell,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate {
 
     @IBOutlet weak var playerImage: UIImageView!
+    @IBOutlet weak var nameImageLabel: UILabel!
+    
     var storageRef: StorageReference!
 
     override func configure() {
         super.configure()
         selectionStyle = .none
         storageRef = Storage.storage().reference()
+        
 
     }
     

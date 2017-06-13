@@ -55,14 +55,15 @@ class FormViewSwitf: XLFormViewController {
         var row : XLFormRowDescriptor
         
         form = XLFormDescriptor(title: "Player name")
-        form.assignFirstResponderOnShow = true
+        form.assignFirstResponderOnShow = false
         
-        section = XLFormSectionDescriptor.formSection(withTitle: "Register")
+        section = XLFormSectionDescriptor.formSection(withTitle: "")
 //        section.footerTitle = "This is a long text that will appear on section footer"
         form.addFormSection(section)
         
         
-        row = XLFormRowDescriptor(tag: Tags.ProfilePlayer, rowType: CustomCellWithNib)
+        // Player image
+        row = XLFormRowDescriptor(tag: Tags.ProfilePlayer, rowType: CustomCellWithNib, title: "Player image")
         section.addFormRow(row)
 
         
@@ -117,14 +118,7 @@ class FormViewSwitf: XLFormViewController {
         // Switch
         section.addFormRow(XLFormRowDescriptor(tag: Tags.JoinStatus, rowType: XLFormRowDescriptorTypeBooleanSwitch, title: "Join status"))
         
-        
-        section = XLFormSectionDescriptor.formSection()
-        form.addFormSection(section)
-        
-        
-        section = XLFormSectionDescriptor.formSection(withTitle: "Hobby")
-        form.addFormSection(section)
-        
+        // Hobby
         row = XLFormRowDescriptor(tag: Tags.Hobby, rowType: XLFormRowDescriptorTypeTextView, title: "Hobby")
         section.addFormRow(row)
         
@@ -161,6 +155,14 @@ class FormViewSwitf: XLFormViewController {
         }
         
         return super.tableView(tableView, heightForRowAt: indexPath)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if section == 0 {
+            return 1
+        }
+        
+        return 30
     }
     
     
